@@ -29,7 +29,7 @@ class CommunesChart extends ApexChartWidget
      */
     protected static ?int $sort = 2;
 
-    protected int | string | array $columnSpan = 1;
+    protected int | string | array $columnSpan = 2;
 
     
     protected function getOptions(): array

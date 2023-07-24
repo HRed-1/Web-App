@@ -19,7 +19,7 @@ class SecteursChart extends ApexChartWidget
      *
      * @var string|null
      */
-    protected static ?string $heading = 'SecteursChart';
+    protected static ?string $heading = 'Repartition par Secteur d\Activite';
 
     /**
      * Chart options (series, labels, types, size, animations...)
@@ -29,7 +29,7 @@ class SecteursChart extends ApexChartWidget
      */
     protected static ?int $sort = 2;
 
-    protected int | string | array $columnSpan = 1;
+    protected int | string | array $columnSpan = 2;
 
     
 
@@ -47,7 +47,7 @@ class SecteursChart extends ApexChartWidget
 
             $secteur_actvite_projets= array_map( function($secteur_actvite){
                 return  DB::table('projets')
-                ->where('commune_id','=',$secteur_actvite ->id)
+                ->where('secteur_actvite_id','=',$secteur_actvite ->id)
                 
                 ->count(); 
             } , $secteur_actvites->toArray()) ;
